@@ -1,16 +1,14 @@
 #!/bin/sh
-COLOR_GREEN='\032[0;32m'
-COLOR_NONE='\033[0m'
-echo -e "${COLOR_GREEN}RUNNING APT-UPDATE${COLOR_NONE}"
+echo -e "$(tput setaf 2)$(tput setab 7)RUNNING APT-UPDATE$(tput sgr 0)"
 apt update
-echo -e "${COLOR_GREEN}INSTALLING APACHE${COLOR_NONE}"
+echo -e "$(tput setaf 2)$(tput setab 7)INSTALLING APACHE$(tput sgr 0)"
 apt install apache2
-echo -e "${COLOR_GREEN}INSTALLING MYSQL SERVER${COLOR_NONE}"
+echo -e "$(tput setaf 2)$(tput setab 7)INSTALLING MYQSL SERVER$(tput sgr 0)"
 apt install mysql-server
-echo -e "${COLOR_GREEN}RUNNING MYSQL SERVER INSTALLER${COLOR_NONE}"
+echo -e "$(tput setaf 2)$(tput setab 7)RUNNING MYSQL-SERVER INSTALLATION$(tput sgr 0)"
 mysql_secure_installation
-echo -e "${COLOR_GREEN}INSTALLING PHP${COLOR_NONE}"
+echo -e "$(tput setaf 2)$(tput setab 7)INSTALLING PHP$(tput sgr 0)"
 apt install php-pear php-fpm php-dev php-zip php-curl php-xmlrpc php-gd php-mysql
-echo -e "${COLOR_GREEN}RESTARTING APACHE${COLOR_NONE}"
+echo -e "$(tput setaf 2)$(tput setab 7)RESTARTING APACHE$(tput sgr 0)"
 service apache2 restart
 exit
