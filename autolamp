@@ -8,7 +8,7 @@ sudo apt install mysql-server
 echo "\n$(tput setaf 1)$(tput setab 7)RUNNING MYSQL-SERVER INSTALLATION$(tput sgr 0)\n"
 sudo mysql_secure_installation
 echo "\n$(tput setaf 1)$(tput setab 7)INSTALLING PHP$(tput sgr 0)\n"
-sudo apt install php-pear php-fpm php-dev php-zip php-curl php-xmlrpc php-gd php-mysql
+sudo apt install php-pear php-fpm php-dev php-zip php-curl php-xmlrpc php-gd php-mysql php-mbstring php-xml libapache2-mod-php
 echo "\n$(tput setaf 1)$(tput setab 7)RESTARTING APACHE$(tput sgr 0)\n"
 sudo service apache2 restart
 exit
