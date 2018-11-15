@@ -1,16 +1,16 @@
 #!/bin/sh
 COLOR_GREEN='\032[0;32m'
 COLOR_NONE='\033[0m'
-printf "${COLOR_GREEN}RUNNING APT-UPDATE${COLOR_NONE}"
+echo -e "${COLOR_GREEN}RUNNING APT-UPDATE${COLOR_NONE}"
 apt update
-printf "${COLOR_GREEN}INSTALLING APACHE${COLOR_NONE}"
+echo -e "${COLOR_GREEN}INSTALLING APACHE${COLOR_NONE}"
 apt install apache2
-printf "${COLOR_GREEN}INSTALLING MYSQL SERVER${COLOR_NONE}"
+echo -e "${COLOR_GREEN}INSTALLING MYSQL SERVER${COLOR_NONE}"
 apt install mysql-server
-printf "${COLOR_GREEN}RUNNING MYSQL SERVER INSTALLER${COLOR_NONE}"
+echo -e "${COLOR_GREEN}RUNNING MYSQL SERVER INSTALLER${COLOR_NONE}"
 mysql_secure_installation
-printf "${COLOR_GREEN}INSTALLING PHP${COLOR_NONE}"
+echo -e "${COLOR_GREEN}INSTALLING PHP${COLOR_NONE}"
 apt install php-pear php-fpm php-dev php-zip php-curl php-xmlrpc php-gd php-mysql
-printf "${COLOR_GREEN}RESTARTING APACHE${COLOR_NONE}"
+echo -e "${COLOR_GREEN}RESTARTING APACHE${COLOR_NONE}"
 service apache2 restart
 exit
