@@ -1,14 +1,14 @@
 #!/bin/sh
 echo -e "\n$(tput setaf 1)$(tput setab 7)RUNNING APT-UPDATE$(tput sgr 0)\n"
-apt update
+sudo apt update
 echo -e "\n$(tput setaf 1)$(tput setab 7)INSTALLING APACHE$(tput sgr 0)\n"
-apt install apache2
+sudo apt install apache2
 echo -e "\n$(tput setaf 1)$(tput setab 7)INSTALLING MYQSL SERVER$(tput sgr 0)\n"
-apt install mysql-server
+sudo apt install mysql-server
 echo -e "\n$(tput setaf 1)$(tput setab 7)RUNNING MYSQL-SERVER INSTALLATION$(tput sgr 0)\n"
-mysql_secure_installation
+sudo mysql_secure_installation
 echo -e "\n$(tput setaf 1)$(tput setab 7)INSTALLING PHP$(tput sgr 0)\n"
-apt install php-pear php-fpm php-dev php-zip php-curl php-xmlrpc php-gd php-mysql
+sudo apt install php-pear php-fpm php-dev php-zip php-curl php-xmlrpc php-gd php-mysql
 echo -e "\n$(tput setaf 1)$(tput setab 7)RESTARTING APACHE$(tput sgr 0)\n"
-service apache2 restart
+sudo service apache2 restart
 exit
